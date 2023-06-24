@@ -10,256 +10,6 @@ const ProductDetails = () => {
           <section className="surface-50 font-medium py-3 text-center text-xs sm:text-base text-900">
             <strong>15%</strong> off on your first order.
           </section>
-          <div
-            className="surface-overlay px-4 md:px-6 lg:px-8 flex align-items-stretch relative"
-            style={{ minHeight: "80px" }}
-          >
-            <a className="p-ripple cursor-pointer flex align-items-center lg:hidden text-700 mr-3 sm:mr-5">
-              <i className="pi pi-bars text-4xl"></i>
-              <span
-                role="presentation"
-                className="p-ink"
-                style={{ height: "0px", width: "0px" }}
-              ></span>
-            </a>
-            <div className="flex align-items-center justify-content-center">
-              <img
-                src="/demo/images/blocks/logos/hyper.svg"
-                alt="Image"
-                classNameName="lg:mr-6 h-2rem sm:h-3rem"
-              />
-            </div>
-            <div
-              id="nav-1"
-              className="surface-overlay hidden lg:flex absolute lg:static left-0 top-100 z-1 shadow-2 lg:shadow-none w-full lg:w-auto py-3 lg:py-0"
-            >
-              <ul className="list-none p-0 m-0 flex flex-column lg:flex-row">
-                <li className="flex flex-column lg:flex-row">
-                  <a className="p-ripple inline-flex align-items-center cursor-pointer border-right-2 lg:border-right-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base font-medium lg:font-base w-full lg:w-auto">
-                    <span>Women</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "88.6125px", width: "88.6125px" }}
-                    ></span>
-                  </a>
-                  <div className="surface-overlay shadow-none lg:shadow-2 hidden lg:absolute w-full left-0 top-100 pl-8 pr-6 lg:px-6 py-0 lg:py-6">
-                    <div className="flex flex-column lg:flex-row lg:justify-content-between">
-                      <a className="font-medium text-lg cursor-pointer block lg:hidden mb-3 select-none">
-                        Clothing
-                      </a>
-                      <ul className="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
-                        <li className="font-bold mb-5 text-xl text-900 hidden lg:block">
-                          Clothing
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Dresses
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Jeans
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Pants
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Skirts
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Sweaters
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Blouses
-                        </li>
-                      </ul>
-                      <a className="font-medium text-lg cursor-pointer block lg:hidden mb-3 select-none">
-                        Shoes
-                      </a>
-                      <ul className="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
-                        <li className="font-bold mb-5 text-xl text-900 hidden lg:block">
-                          Shoes
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Athletic
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Boots
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Sneakers
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Flats
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Outdoor
-                        </li>
-                      </ul>
-                      <a className="font-medium text-lg cursor-pointer block lg:hidden mb-3 select-none">
-                        Accessories
-                      </a>
-                      <ul className="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
-                        <li className="font-bold mb-5 text-xl text-900 hidden lg:block">
-                          Accessories
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Handbags
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Gloves
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Belts
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">Hats</li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Earmuffs
-                        </li>
-                      </ul>
-                      <a className="font-medium text-lg cursor-pointer block lg:hidden mb-3 select-none">
-                        Jewelry
-                      </a>
-                      <ul className="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
-                        <li className="font-bold mb-5 text-xl text-900 hidden lg:block">
-                          Jewelry
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Anklets
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Bracelets
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Earrings
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Necklaces
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Rings
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Wedding
-                        </li>
-                      </ul>
-                      <a className="font-medium text-lg cursor-pointer block lg:hidden mb-3 select-none">
-                        Brands
-                      </a>
-                      <ul className="list-none py-0 pr-0 lg:pl-0 pl-5 m-0 text-700 hidden lg:block">
-                        <li className="font-bold mb-5 text-xl text-900 hidden lg:block">
-                          Brands
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Hyper
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">Peak</li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Alfred
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Bastion
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Charot
-                        </li>
-                        <li className="mb-3 cursor-pointer hover:text-900">
-                          Hodly
-                        </li>
-                      </ul>
-                      <ul className="list-none p-0 m-0 text-700">
-                        <li className="mt-5 sm:mt-0 mb-5 flex flex-column align-items-center">
-                          <img
-                            src="/demo/images/blocks/ecommerce/storenavigation/storenavigation-1-1.png"
-                            alt="Image"
-                            style={{ borderRadius: "12px" }}
-                            className="w-full lg:w-auto"
-                          />
-                          <span className="inline-flex surface-0 text-900 px-3 py-2 border-round -mt-5 font-medium">
-                            New Products
-                          </span>
-                        </li>
-                        <li className="mb-5 flex flex-column align-items-center">
-                          <img
-                            src="/demo/images/blocks/ecommerce/storenavigation/storenavigation-1-2.png"
-                            alt="Image"
-                            style={{ borderRadius: "12px" }}
-                            className="w-full lg:w-auto"
-                          />
-                          <span className="inline-flex surface-0 text-900 px-3 py-2 border-round -mt-5 font-medium">
-                            Discounts
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </li>
-                <li className="flex flex-column lg:flex-row">
-                  <a className="p-ripple inline-flex align-items-center cursor-pointer border-right-2 lg:border-right-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base font-medium lg:font-base w-full lg:w-auto">
-                    <span>Men</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "80px", width: "80px" }}
-                    ></span>
-                  </a>
-                  <div className="surface-overlay shadow-none lg:shadow-2 hidden lg:absolute w-full left-0 top-100 px-6 py-0 lg:py-6 h-10rem lg:h-30rem z-1">
-                    <div className="border-2 border-dashed surface-border border-round h-full"></div>
-                  </div>
-                </li>
-                <li className="flex flex-column lg:flex-row">
-                  <a className="p-ripple inline-flex align-items-center cursor-pointer border-right-2 lg:border-right-none lg:border-bottom-2 border-transparent hover:border-primary py-3 lg:py-0 px-6 lg:px-3 text-700 select-none text-xl lg:text-base font-medium lg:font-base w-full lg:w-auto">
-                    <span>Kids</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "80px", width: "80px" }}
-                    ></span>
-                  </a>
-                  <div className="surface-overlay shadow-none lg:shadow-2 hidden lg:absolute w-full left-0 top-100 px-6 py-0 lg:py-6 h-10rem lg:h-30rem z-1">
-                    <div className="border-2 border-dashed surface-border border-round h-full"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="flex ml-auto">
-              <ul className="list-none p-0 m-0 flex">
-                <li className="flex">
-                  <a className="p-ripple text-900 font-medium inline-flex align-items-center cursor-pointer px-2 sm:px-3 hover:text-primary">
-                    <i className="pi pi-search mr-2 lg:mr-3 text-xl sm:text-base"></i>
-                    <span className="hidden lg:inline">Search</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "112.188px", width: "112.188px" }}
-                    ></span>
-                  </a>
-                </li>
-                <li className="flex">
-                  <a className="p-ripple text-900 font-medium inline-flex align-items-center cursor-pointer px-2 sm:px-3 hover:text-primary">
-                    <i className="pi pi-heart mr-2 lg:mr-3 text-xl sm:text-base"></i>
-                    <span className="hidden lg:inline">Favorites</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "128.588px", width: "128.588px" }}
-                    ></span>
-                  </a>
-                </li>
-                <li className="flex">
-                  <a className="p-ripple text-900 font-medium inline-flex align-items-center cursor-pointer px-2 sm:px-3 hover:text-primary">
-                    <i className="pi pi-shopping-cart lg:mr-3 text-xl sm:text-base p-overlay-badge">
-                      <span className="p-badge p-component p-badge-dot"></span>
-                    </i>
-                    <span className="hidden lg:inline">Cart</span>
-                    <span
-                      role="presentation"
-                      className="p-ink"
-                      style={{ height: "94.4625px", width: "94.4625px" }}
-                    ></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div className="surface-section px-4 md:px-6 lg:px-8">
             <ul className="list-none py-3 px-0 m-0 border-y-1 surface-border flex flex-wrap align-items-center font-medium overflow-x-auto">
               <li className="lg:pr-3">
@@ -269,21 +19,21 @@ const ProductDetails = () => {
                 <span className="text-900">/</span>
               </li>
               <li className="lg:px-2">
-                <a className="cursor-pointer text-900 white-space-nowrap">Women</a>
+                <a className="cursor-pointer text-900 white-space-nowrap">Categories</a>
               </li>
               <li className="lg:px-2">
                 <span className="text-900">/</span>
               </li>
               <li className="lg:px-2">
                 <a className="cursor-pointer text-900 white-space-nowrap">
-                  Accessories
+                  Stationeries
                 </a>
               </li>
               <li className="lg:px-2">
                 <span className="text-900">/</span>
               </li>
               <li className="lg:px-2">
-                <a className="cursor-pointer text-500 white-space-nowrap">Shoes</a>
+                <a className="cursor-pointer text-500 white-space-nowrap">Calculator</a>
               </li>
             </ul>
             <div className="grid my-4">

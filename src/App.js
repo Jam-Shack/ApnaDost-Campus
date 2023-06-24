@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useEffect, lazy, Suspense } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth, db } from "./FirebaseConfig";
 import "./App.css";
 import { motion } from "framer-motion";
@@ -8,20 +8,31 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
-import Contact from "./pages/contact";
-import ProtectedRoute from "./ProtectedGuard/ProtectedRoute";
-import PageNotFound from "./pages/PageNotFound/PageNotFound";
+
+const PageNotFound = lazy(() => import("./pages/PageNotFound/PageNotFound"));
 
 const Home = lazy(() => import("./pages/homepage"));
+const Contact = lazy(() => import("./pages/contact"));
 const Navbar = lazy(() => import("./components/navbar"));
 const Login = lazy(() => import("./pages/login"));
-const Signup = lazy(() => import("./pages/signup"));
 const Product = lazy(() => import("./pages/Products/Product"));
 const ProductDetails = lazy(() => import("./pages/Products/ProductDetails"));
+
+//admin Routings
+const SellerDashboard = lazy(() =>
+  import("./components/Seller/SellerDashboard")
+);
+const AddProducts = lazy(() =>
+  import("./components/Seller/AddProducts/AddProducts")
+);
+const ViewProducts = lazy(() =>
+  import("./components/Seller/ViewProducts/ViewProducts")
+);
 
 function App() {
   const dispatch = useDispatch();
   var separatedString1;
+  const { loggedInUser } = useSelector((state) => ({ ...state }));
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (loggedInUser) => {
@@ -45,6 +56,7 @@ function App() {
                 token: idTokenResult.token,
                 role: separatedString1.role,
                 id: separatedString1.id,
+                phone: separatedString1.phone
               },
             });
           })
@@ -80,14 +92,35 @@ function App() {
         }
       >
         <Navbar />
+
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/products" element={<Product />} />
-          <Route exact path="/product_details" element={<ProtectedRoute> <ProductDetails /> </ProtectedRoute>} />
-          <Route exact path="*" element={<PageNotFound /> } />
+          <Route exact path="/product_details" element={<ProductDetails />} />
+
+          {loggedInUser && loggedInUser.role.indexOf("seller") === 1 && (
+            <>
+              <Route
+                exact
+                path="/seller/dashboard"
+                element={<SellerDashboard />}
+              />
+              <Route
+                exact
+                path="/seller/addProduct"
+                element={<AddProducts />}
+              />
+              <Route
+                exact
+                path="/seller/viewProducts"
+                element={<ViewProducts />}
+              />
+            </>
+          )}
+
+          <Route exact path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
     </motion.div>

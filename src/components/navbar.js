@@ -7,7 +7,6 @@ import SellerForm from "./Seller/SellerForm";
 const Navbar = () => {
   
   const { loggedInUser } = useSelector((state) => ({ ...state }));
-
   return (
     <>
       {/* <!-- Navbar --> */}
@@ -28,7 +27,7 @@ const Navbar = () => {
           </button>
 
           {/* <!-- Collapsible wrapper --> */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent" >
             {/* <!-- Navbar brand --> */}
             <a className="navbar-brand mt-lg-0" href="#">
               <img
@@ -48,6 +47,11 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/chat">
+                  Chat
                 </Link>
               </li>
               <li className="nav-item">
@@ -77,7 +81,7 @@ const Navbar = () => {
               {loggedInUser && loggedInUser.role.includes("seller") ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link" to="/seller/dashboard">
                       Sell your product
                     </Link>
                   </li>
