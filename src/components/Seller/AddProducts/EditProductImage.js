@@ -1,67 +1,60 @@
 /* eslint-disable no-loop-func */
-import React from "react";
-import Resizer from "react-image-file-resizer";
+import React, { useState } from "react";
 import { Avatar, Badge } from "antd";
-require("dotenv").config();
-
-// const cloudinary = require('cloudinary');
-const cloudinary = require("cloudinary/lib/cloudinary");
-cloudinary.config({
-  cloud_name: "ddgpfrwad",
-  api_key: "664176344397445",
-  api_secret: "mKHGENlWSjriLYCRS65g7OSv_AE",
-});
+import axios from "axios";
 
 const EditProductImage = ({ values, setValues, setLoading }) => {
-  var result;
+  const [errorMessage, setErrorMessage] = useState("");
   var image_id;
 
-  const upload = async (uri) => {
-    result = await cloudinary.uploader.upload(uri, {
-      public_id: `${Date.now()}`,
-      resource_type: "auto",
-    });
+  const upload = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "owxlp0qy");
+
+    const { data } = await axios.post(
+      "https://api.cloudinary.com/v1_1/ddgpfrwad/image/upload",
+      formData
+    );
+    return { public_id: data?.public_id, url: data?.secure_url };
   };
 
   //to remove uploaded images to cloudinary
   const remove = async (public_id) => {
     image_id = public_id;
-    cloudinary.uploader.destroy(image_id, (err, result) => {
-      if (err) return;
-      // alert( err );
-      alert("ok");
-    });
+    try {
+      await axios.delete(
+        `https://api.cloudinary.com/v1_1/ddgpfrwad/image/destroy/${image_id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Deleted");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
-  const fileUploadAndResize = (e) => {
-    let files = e.target.files;
-    let allUploadedFiles = values.image;
-
-    if (files) {
-      setLoading(true);
-      for (let i = 0; i < files.length; i++) {
-        Resizer.imageFileResizer(
-          files[i],
-          720,
-          720,
-          "JPEG",
-          100,
-          0,
-          (uri) => {
-            upload(uri)
-              .then((res) => {
-                setLoading(false);
-                allUploadedFiles.push(result);
-                setValues({ ...values, image: allUploadedFiles });
-              })
-              .catch((err) => {
-                setLoading(false);
-                console.log("UPLOAD EROR", err);
-              });
-          },
-          "base64"
-        );
+  //to upload multiple files
+  const fileUploadAndResize = async (e) => {
+    try {
+      let files = e.target.files;
+      let allUploadedFiles = values.images;
+      if (files) {
+        console.log(files);
+        setLoading(true);
+        for (let i = 0; i < files.length; i++) {
+          const imgData = await upload(files[i]);
+          allUploadedFiles.push(imgData);
+          setLoading(false);
+        }
+        setValues({ ...values, images: allUploadedFiles });
       }
+    } catch (err) {
+      setLoading(false);
+      console.log(err);
     }
   };
 
@@ -70,11 +63,11 @@ const EditProductImage = ({ values, setValues, setLoading }) => {
     remove(public_id)
       .then((res) => {
         setLoading(false);
-        const { image } = values;
-        let filteredImages = image.filter((item) => {
+        const { images } = values;
+        let filteredImages = images.filter((item) => {
           return item.public_id !== public_id;
         });
-        setValues({ ...values, image: filteredImages });
+        setValues({ ...values, images: filteredImages });
       })
       .catch((err) => {
         console.log(err);
@@ -85,8 +78,9 @@ const EditProductImage = ({ values, setValues, setLoading }) => {
   return (
     <>
       <div className="row">
-        {values.image &&
-          values.image.map((image) => (
+        {values.images &&
+          values.images.length > 0 &&
+          values.images.map((image) => (
             <Badge
               count="X"
               key={image.public_id}
@@ -120,6 +114,7 @@ const EditProductImage = ({ values, setValues, setLoading }) => {
             multiple
             accept="images/*"
             onChange={fileUploadAndResize}
+            required
           />
         </label>
       </div>

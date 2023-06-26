@@ -15,12 +15,14 @@ const AddProductForm = ({ handleSubmit, handleChange, values, setValues }) => {
     price,
     startDate,
     endDate,
+    available,
     quantity,
     notes,
   } = values;
   //dropdown Items
   const opt = ["Sell", "Rent", "Donate"];
   const categories = ["Stationery", "Calculator", "Laptop", "Exam Material"];
+  const availablility = ["Yes", "No"];
 
   return (
     <>
@@ -133,6 +135,16 @@ const AddProductForm = ({ handleSubmit, handleChange, values, setValues }) => {
                 </div>
               </>
             )}
+            <div class="field mb-4 col-12 md:col-6">
+              <Dropdown
+                name="available"
+                value={available}
+                onChange={handleChange}
+                options={availablility}
+                placeholder="Product Availability"
+                className="w-full md:w-32rem"
+              />
+            </div>
             <div class="field mb-4 col-6 md:col-3">
               <input
                 placeholder="Quantity"
@@ -158,10 +170,10 @@ const AddProductForm = ({ handleSubmit, handleChange, values, setValues }) => {
                 style={{ overflow: "hidden", height: "129px" }}
               ></textarea>
             </div>
-
           </div>
           <div className="btnBox">
             <button
+              id="btn1"
               aria-label="Create Invoice"
               class="p-button p-component w-auto"
             >
@@ -175,6 +187,7 @@ const AddProductForm = ({ handleSubmit, handleChange, values, setValues }) => {
             </button>
 
             <button
+              id="btn2"
               aria-label="Create Invoice"
               class="p-button p-component w-auto"
             >

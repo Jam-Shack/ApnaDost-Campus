@@ -66,17 +66,17 @@ const SellerSidebar = () => {
           </li>
           <li>
             <Link to="/seller/addProduct">
-              <span class="fa fa-download mr-3 notif"></span> Sell Products
+              <span class="fa fa-plus mr-3 notif"></span> Sell Products
             </Link>
           </li>
           <li>
             <Link to="/seller/viewProducts">
-              <span class="fa fa-gift mr-3"></span> View My Products
+              <span class="fa fa-eye mr-3"></span>View My Products
             </Link>
           </li>
           <li>
             <Link to="#">
-              <span class="fa fa-trophy mr-3"></span> Top Review
+              <span class="fa fa-trophy mr-3"></span>Top Review
             </Link>
           </li>
           <li>
@@ -86,7 +86,7 @@ const SellerSidebar = () => {
           </li>
           <li>
             <a href="#">
-              <span class="fa fa-support mr-3"></span> Support
+              <span class="fa fa-hand mr-3"></span> Support
             </a>
           </li>
           <ConfirmDialog

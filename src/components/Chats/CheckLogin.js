@@ -1,17 +1,18 @@
-// import './App.css';
+// import "../../ChatAllPage.css";
+import "../../ChatAllPage.css"
 // import Chat from './components/';
-import Chat from './Chat';
-import SignIn from './SignIn';
-import { auth } from '../../FirebaseConfig'
-import { useAuthState } from 'react-firebase-hooks/auth'
+import Chat from './Chat'
+import { useSelector } from "react-redux";
+import { Navigate } from 'react-router-dom';
 
-function App() {
-  const [user] = useAuthState(auth)
+function CheckLogin() {
+  // const [user] = useAuthState(auth)
+  const { loggedInUser } = useSelector((state) => ({ ...state }));
   return (
     <>
-      {user ? <Chat /> : <SignIn />}
+      {loggedInUser ? <Chat /> :<Navigate to="/login" replace={true} />}
     </>
   );
 }
 
-export default App;
+export default CheckLogin;

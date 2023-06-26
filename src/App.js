@@ -13,6 +13,7 @@ const PageNotFound = lazy(() => import("./pages/PageNotFound/PageNotFound"));
 
 const Home = lazy(() => import("./pages/homepage"));
 const Contact = lazy(() => import("./pages/contact"));
+const Chat = lazy(() => import("./components/Chats/CheckLogin"));
 const Navbar = lazy(() => import("./components/navbar"));
 const Login = lazy(() => import("./pages/login"));
 const Product = lazy(() => import("./pages/Products/Product"));
@@ -27,6 +28,9 @@ const AddProducts = lazy(() =>
 );
 const ViewProducts = lazy(() =>
   import("./components/Seller/ViewProducts/ViewProducts")
+);
+const EditProduct = lazy(() =>
+  import("./components/Seller/AddProducts/EditProduct")
 );
 
 function App() {
@@ -95,7 +99,10 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/chat" element={<Chat />} />
+
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/chat" element={<Chat />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/products" element={<Product />} />
           <Route exact path="/product_details" element={<ProductDetails />} />
@@ -114,13 +121,22 @@ function App() {
               />
               <Route
                 exact
+                path="/seller/editProduct/:id"
+                element={<EditProduct />}
+              />
+              <Route
+                exact
+                path="/seller/viewProduct/:id"
+                element={<AddProducts />}
+              />
+              <Route
+                exact
                 path="/seller/viewProducts"
                 element={<ViewProducts />}
               />
             </>
           )}
-
-          <Route exact path="*" element={<PageNotFound />} />
+          {/* <Route exact path="*" element={<PageNotFound />} /> */}
         </Routes>
       </Suspense>
     </motion.div>

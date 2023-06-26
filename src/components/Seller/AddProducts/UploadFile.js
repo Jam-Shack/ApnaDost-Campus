@@ -1,17 +1,12 @@
 /* eslint-disable no-loop-func */
 import React from "react";
-// import Resizer from "react-image-file-resizer";
 import { Avatar, Badge } from "antd";
-import { Cloudinary } from "@cloudinary/url-gen";
 import axios from "axios";
+import './addProd.css'
 
-// const cloudinary = new Cloudinary({
-//   cloud: "ddgpfrwad",
-// });
 
 const UploadFile = ({ values, setValues, setLoading }) => {
   var image_id;
-//   console.log(values);
 
   //to upload images to cloudinary
   const upload = async (file) => {
@@ -26,7 +21,7 @@ const UploadFile = ({ values, setValues, setLoading }) => {
     return { public_id: data?.public_id, url: data?.secure_url };
   };
 
-  //to remove uploaded images to cloudinary
+  //to remove uploaded images from cloudinary
   const remove = async (public_id) => {
     image_id = public_id;
     try{
@@ -41,6 +36,7 @@ const UploadFile = ({ values, setValues, setLoading }) => {
     }
 };
 
+//Iterate through all the images and pass to upload function
   const fileUploadAndResize = async (e) => {
     try {
       let files = e.target.files;
@@ -61,6 +57,7 @@ const UploadFile = ({ values, setValues, setLoading }) => {
     }
   };
 
+  //To remove file from cloudinary
   const handleImageRemove = (public_id) => {
     setLoading(true);
     remove(public_id)
@@ -87,10 +84,10 @@ const UploadFile = ({ values, setValues, setLoading }) => {
               count="X"
               key={image.public_id}
               onClick={() => handleImageRemove(image.public_id)}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer"}}
             >
               <Avatar
-                size={60}
+                size={80}
                 src={image.url}
                 shape="square"
                 className="ml-3 w:30"
@@ -102,13 +99,16 @@ const UploadFile = ({ values, setValues, setLoading }) => {
       <div className="row" >
         <label
           style={{
+            cursor:'pointer',
+            textAlign:'center',
+            background: '#FCA744',
             padding: "8px",
             borderRadius: "8px",
             transition: ".4s ease all",
           }}
-          className=" btn-primary btn-raised"
+          className="label btn-primary btn-raised"
         >
-          Choose Files
+          Upload Product Image
           <input
             type="file"
             hidden

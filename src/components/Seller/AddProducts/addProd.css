@@ -1,3 +1,12 @@
 .btnBox button{
+    background-color: #FCA744;
     margin: 1rem;
+}
+.label:hover{
+    opacity: 0.9;
+}
+#btn1:hover, #btn2:hover{
+    background-color: #FCA744;
+    opacity: 0.7;
+
 }

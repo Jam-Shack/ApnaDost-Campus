@@ -236,10 +236,7 @@ select {
 button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
+[type="submit"] 
 button:not(:disabled),
 [type="button"]:not(:disabled),
 [type="reset"]:not(:disabled),
@@ -265,10 +262,7 @@ input[type="checkbox"] {
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
-input[type="month"] {
-  -webkit-appearance: listbox;
-}
-
+input[type="month"] 
 textarea {
   overflow: auto;
   resize: vertical;
@@ -302,10 +296,7 @@ progress {
   height: auto;
 }
 
-[type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none;
-}
+[type="search"] 
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -6522,7 +6513,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #E585171A !important;
 }
 
 a.bg-light:hover,
@@ -10171,7 +10162,7 @@ h5,
 #sidebar {
   min-width: 300px;
   max-width: 300px;
-  background: #32373d;
+  background: #E585171A;
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -10221,7 +10212,7 @@ h5,
 #sidebar ul li a {
   padding: 15px 30px;
   display: block;
-  color: rgba(255, 255, 255, 0.6);
+  color: #000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 #sidebar ul li a span.notif {
@@ -10247,7 +10238,7 @@ h5,
 }
 #sidebar ul li.active > a {
   background: transparent;
-  color: #fff;
+  color: #000;
 }
 #sidebar ul li.active > a:hover {
   background: #2f89fc;
@@ -10311,6 +10302,7 @@ h5,
   z-index: 0;
 }
 .bg-wrap:after {
+  border-top: 1px solid rgba(0,0,0,0.4);
   z-index: -1;
   position: absolute;
   top: 0;
@@ -10318,7 +10310,6 @@ h5,
   right: 0;
   bottom: 0;
   content: "";
-  background: #000;
   opacity: 0.3;
 }
 .bg-wrap .user-logo .img {
@@ -10329,7 +10320,7 @@ h5,
   margin-bottom: 10px;
 }
 .bg-wrap .user-logo h3 {
-  color: #fff;
+  color: #000;
   font-size: 18px;
 }
 
