@@ -30,7 +30,7 @@ electronics, books etc) or even uncategorised.</h5>
 
 ## 💡 Idea / Solution <a name = "idea"></a>
 
-<img src="./src/assests/intro.png">
+<img src="https://github.com/adil-khatri/ApnaDost-Campus/raw/main/src/assests/intro.png">
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
