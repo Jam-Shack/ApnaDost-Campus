@@ -2,7 +2,7 @@
   <a href="" rel="noopener">
  <img src="./src/assests/lomgo.png" alt="Project logo"></a>
 </p>
-<h1 align="center">Npm-Blitz presents Apna College</h1>
+<h1 align="center">Npm-Blitz presents Apna Dost</h1>
 
 <div align="center" >
 
@@ -15,7 +15,7 @@ Buy sell and rent anything within your campus
 </h2>
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
-<h4>Objective: develop a website to provide a platform to sell, request and rent products among the
+<h4>Objective: Develop a website to provide a platform to sell, request and rent products among the
 college peers . The website should allow the students to post demands for certain items regardless of
 availability. Other students should be able to see those requests and put forward offers to the one
 demanding it. The website should be user friendly with clear distinctions among the products for
