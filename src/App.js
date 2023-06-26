@@ -12,11 +12,14 @@ import "primeflex/primeflex.css";
 const PageNotFound = lazy(() => import("./pages/PageNotFound/PageNotFound"));
 
 const Home = lazy(() => import("./pages/homepage"));
+const Team = lazy(() => import("./pages/team"));
+
 const Contact = lazy(() => import("./pages/contact"));
 const Chat = lazy(() => import("./components/Chats/CheckLogin"));
 const Navbar = lazy(() => import("./components/navbar"));
 const Login = lazy(() => import("./pages/login"));
 const Product = lazy(() => import("./pages/Products/Product"));
+
 const ProductDetails = lazy(() => import("./pages/Products/ProductDetails"));
 
 //admin Routings
@@ -29,6 +32,10 @@ const AddProducts = lazy(() =>
 const ViewProducts = lazy(() =>
   import("./components/Seller/ViewProducts/ViewProducts")
 );
+const ViewAllProducts = lazy(() =>
+  import("./components/Seller/ViewAllProducts/ViewAllProducts")
+);
+
 const EditProduct = lazy(() =>
   import("./components/Seller/AddProducts/EditProduct")
 );
@@ -60,7 +67,7 @@ function App() {
                 token: idTokenResult.token,
                 role: separatedString1.role,
                 id: separatedString1.id,
-                phone: separatedString1.phone
+                phone: separatedString1.phone,
               },
             });
           })
@@ -100,12 +107,15 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/team" element={<Team />} />
+
 
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/chat" element={<Chat />} />
+          <Route exact path="/chat/:userEmail" element={<Chat />} />
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/products" element={<Product />} />
           <Route exact path="/product_details" element={<ProductDetails />} />
+          <Route exact path="/viewAllProducts" element={<ViewAllProducts />} />
 
           {loggedInUser && loggedInUser.role.indexOf("seller") === 1 && (
             <>
@@ -133,6 +143,11 @@ function App() {
                 exact
                 path="/seller/viewProducts"
                 element={<ViewProducts />}
+              />
+              <Route
+                exact
+                path="/seller/viewAllProducts"
+                element={<ViewAllProducts />}
               />
             </>
           )}

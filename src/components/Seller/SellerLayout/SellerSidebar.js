@@ -64,6 +64,11 @@ const SellerSidebar = () => {
               <span class="fa fa-home mr-3"></span> Dashboard
             </Link>
           </li>
+          {/* <li>
+            <Link to="/seller/viewAllProducts">
+              <span class="fa fa-plus mr-3 notif"></span> View All Products
+            </Link>
+          </li> */}
           <li>
             <Link to="/seller/addProduct">
               <span class="fa fa-plus mr-3 notif"></span> Sell Products
@@ -73,21 +78,6 @@ const SellerSidebar = () => {
             <Link to="/seller/viewProducts">
               <span class="fa fa-eye mr-3"></span>View My Products
             </Link>
-          </li>
-          <li>
-            <Link to="#">
-              <span class="fa fa-trophy mr-3"></span>Top Review
-            </Link>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-cog mr-3"></span> Settings
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="fa fa-hand mr-3"></span> Support
-            </a>
           </li>
           <ConfirmDialog
             visible={visible}

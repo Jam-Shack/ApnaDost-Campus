@@ -1,16 +1,19 @@
-// import "../../ChatAllPage.css";
-import "../../ChatAllPage.css"
-// import Chat from './components/';
-import Chat from './Chat'
+import "../../ChatAllPage.css";
+import Chat from "./Chat";
 import { useSelector } from "react-redux";
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from "react-router-dom";
 
 function CheckLogin() {
-  // const [user] = useAuthState(auth)
+  const { userEmail } = useParams();
+  
   const { loggedInUser } = useSelector((state) => ({ ...state }));
   return (
     <>
-      {loggedInUser ? <Chat /> :<Navigate to="/login" replace={true} />}
+      {loggedInUser ? (
+        <Chat userEmail={userEmail} />
+      ) : (
+        <Navigate to="/login" replace={true} />
+      )}
     </>
   );
 }

@@ -101,17 +101,7 @@ const Login = () => {
 
   return (
     <>
-    {/* <div className="container">
-      <h1>Login here</h1>
-      <div className="box">
-        <GoogleButton
-          type="dark"
-          className="wpcf7-form-control has-spinner wpcf7-submit"
-          style={{ width: "100%" }}
-          onClick={handleGoogleSignIn}
-          />
-      </div>
-    </div> */}
+  
     <section>
   <div className="colour" />
   <div className="box">
@@ -123,21 +113,7 @@ const Login = () => {
       </h1>
     </div>
     <div className="right-container">
-      <form className="form">
-        <div className="inputbox">
-          <input type="text" placeholder="Enter your Name" />
-        </div>
-        <div className="inputbox">
-          <input type="password" placeholder="Enter your Password" />
-        </div>
-        <div className="inputbox">
-          <input type="submit" defaultValue="Login" />
-        </div>
-        <p className="forget">
-          Forgot password? <a href="#"> Click here</a>
-        </p>
-        <p className="option">Or else sign in with</p>
-        <div className="container">
+    <div className="container">
       <div className="box">
         <GoogleButton
           type="dark"
@@ -147,7 +123,6 @@ const Login = () => {
           />
       </div>
     </div>
-      </form>
     </div>
   </div>
 </section>

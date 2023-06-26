@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from "react";
 import SellerSidebar from "../SellerLayout/SellerSidebar";
 import { db } from "../../../FirebaseConfig";
-import ProductCard from "./ProductCard";
+import AllProductCard from "./AllProductCard";
 import { useSelector } from "react-redux";
+import "./AllProductCard.css";
 
-const ViewProducts = () => {
+const ViewAllProducts = () => {
   const { loggedInUser } = useSelector((state) => ({ ...state }));
 
   const [productData, setProductData] = useState([]);
   const [loading, setLoading] = useState(false);
+  // const [page, setPage] = useState(1)
 
   useEffect(() => {
+    
     loadProductsData();
     // setProductData(null);
-    return () => {
+    return () =>{
       setProductData([]);
-    };
-  }, []);
+    }
+  },[]);
 
   const loadProductsData = async () => {
     setLoading(true);
@@ -35,17 +38,19 @@ const ViewProducts = () => {
     return (
       <>
         <div class="wrapper d-flex align-items-stretch">
-        <SellerSidebar />
-        <div id="content" class="p-4 p-md-5 pt-5">
-          <h2 class="mb-4">View all Sell/Rent/Donate Products here</h2>
-          <div className="row-wrap">
-            {productData
-              .filter((p) => p.userEmail === loggedInUser.email)
-              .map((p) => (
-                <div className="col-md-4 pb-3" key={p.productName}>
-                  <ProductCard product={p} />
-                </div>
-              ))}
+        {/* <SellerSidebar /> */}
+        <div className="wrapper d-flex align-items-stretch">
+            {/* <SellerSidebar /> */}
+            <div id="content" className="p-4 p-md-5 pt-5">
+                <h2>All Products </h2>
+                <div className = "product-items">
+                    {productData
+                    .map((p) => (
+                      <div className=""  key={p.productName}>
+                        <AllProductCard product={p} />
+                      </div>
+                    ))}
+                  </div>
           </div>
         </div>
       </div>
@@ -53,4 +58,4 @@ const ViewProducts = () => {
   );
 };
 
-export default ViewProducts;
+export default ViewAllProducts;
