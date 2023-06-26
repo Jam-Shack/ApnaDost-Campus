@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="./src/assests/lomgo.png" alt="Project logo"></a>
+</p>
+<h1 align="center">Npm-Blitz</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center" >
 
-## Available Scripts
+[![Hackathon](https://img.shields.io/badge/hackathon-JamShack-purple.svg)](http://hackathon.url.com)
 
-In the project directory, you can run:
+## </div>
 
-### `npm start`
+<h2 align="center"> 
+Making finances easier. 
+</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧐 Problem Statement <a name = "problem_statement"></a>
+<h4>Objective: develop a website to provide a platform to sell, request and rent products among the
+college peers . The website should allow the students to post demands for certain items regardless of
+availability. Other students should be able to see those requests and put forward offers to the one
+demanding it. The website should be user friendly with clear distinctions among the products for
+sale, rent and request.</h4>
+<h5>💡Enabling the users to donate items.
+</h5>
+<h5>💡Enabling the users to chat with the requester/ sellers.</h5>
+<h5>💡Enabling the user to post requests /rents/ sales under various predefined categories (like
+electronics, books etc) or even uncategorised.</h5>
+<h5>💡Providing a clean experience to the users with filters and sorting options.</h5>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## 💡 Idea / Solution <a name = "idea"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="./src/assests/intro.png">
 
-### `npm run build`
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm i
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Start react server
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Future Scope <a name = "future_scope"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Sale analysis using machine learning
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+-   Reviews of products 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   Super admin panel to manage multiple campuses altogether
 
-## Learn More
+## ⛏️ Built With <a name = "tech_stack"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   **Backend**
+    -   [Firebase](https://firebase.google.com/)
+-   **Frontend**
+    -   [React](https://reactjs.org/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ✍️ Authors <a name = "authors"></a>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   [@Adil Khatri](https://github.com/adil-khatri)
+-   [@Pruthviraj Patil](https://github.com/pruthvirajp04)
+-   [@Manasvi Shetty](https://github.com/Manasvi-Shetty)
+-   [@Harsh Chotaliya](https://github.com/26harsh)
