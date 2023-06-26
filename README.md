@@ -2,7 +2,7 @@
   <a href="" rel="noopener">
  <img src="./src/assests/lomgo.png" alt="Project logo"></a>
 </p>
-<h1 align="center">Npm-Blitz</h1>
+<h1 align="center">Npm-Blitz presents Apna College</h1>
 
 <div align="center" >
 
@@ -11,7 +11,7 @@
 ## </div>
 
 <h2 align="center"> 
-Making finances easier. 
+Buy sell and rent anything within your campus
 </h2>
 
 ## 🧐 Problem Statement <a name = "problem_statement"></a>
